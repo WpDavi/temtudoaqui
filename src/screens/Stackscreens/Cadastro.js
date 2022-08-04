@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import {View, Text, TextInput, StyleSheet, Button,  } from 'react-native'
+import {View, Text, TextInput, StyleSheet, Button, Image  } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import { TextInputMask } from 'react-native-masked-text'
+
 
 import Emailsvg from '../../assents/email.svg'
 import Lock from '../../assents/lock.svg'
+import { CheckBox, Icon } from '@rneui/themed';
+
 
 export default function Login() {
   
@@ -64,22 +68,23 @@ export default function Login() {
       <View style={{flexDirection:'row', alignItems:'center'}}>
         <Emailsvg wiedth='30' height='30' fill='black' />
 
-        <TextInput 
+        <TextInputMask
+        type={'cel-phone'} 
         placeholder="Seu numero" 
         keyboardType="phone-pad"   
         onChangeText={value => setNumero(value)} 
         />
       </View>
 
-      
 
      
        
       
       <Button onPress={() => Cadastrar()}
       title="Cadastrar"
-
       />
+
+     
       
      
       
@@ -94,6 +99,11 @@ const styes = StyleSheet.create({
     flex:1,
     alignItems:'center',
     justifyContent:'center'    
+  },
+  stretch: {
+    width: 50,
+    height: 200,
+    resizeMode: 'stretch',
   },
   
   
